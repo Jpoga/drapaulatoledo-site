@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Carla Sans';
+  src: url('../fonts/CarlaSans.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Carla Sans';
+  src: url('../fonts/CarlaSansLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --primary: #11283b;
   --secondary: #efe4d6;
@@ -1217,22 +1233,6 @@ textarea {
     padding: 30px 22px;
     border-radius: 26px
   }
-}
-
-@font-face {
-  font-family: 'Carla Sans';
-  src: url('../assets/fonts/CarlaSans.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Carla Sans';
-  src: url('../assets/fonts/CarlaSansLight.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
 }
 
 .brand img {
