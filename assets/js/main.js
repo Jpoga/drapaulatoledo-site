@@ -45,3 +45,24 @@ accordion?.querySelectorAll('details').forEach((detail) => {
     });
   });
 });
+
+// Fecha o menu móvel ao clicar fora dele ou pressionar Escape.
+document.addEventListener('click', (event) => {
+  if (!menu?.classList.contains('is-open')) return;
+  const target = event.target;
+  if (!(target instanceof Node)) return;
+  if (menu.contains(target) || menuToggle?.contains(target)) return;
+
+  menu.classList.remove('is-open');
+  menuToggle?.classList.remove('is-open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape' || !menu?.classList.contains('is-open')) return;
+  menu.classList.remove('is-open');
+  menuToggle?.classList.remove('is-open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  menuToggle?.focus();
+});
+
