@@ -449,6 +449,10 @@ textarea {
   font-size: 1rem
 }
 
+.section-copy h2 {
+  text-align: center;
+}
+
 .signature-note {
   display: flex;
   align-items: center;
@@ -1998,15 +2002,15 @@ textarea {
     justify-content: center;
   }
 
-  .faq-layout {
+  .two-col, .faq-layout {
     grid-template-columns: 1fr;
   }
 
-  .faq-photo {
+  .section-media, .faq-photo {
     order: 2;
   }
 
-  .faq-content {
+  .section-copy, .faq-content {
     order: 1;
   }
 
@@ -2088,8 +2092,8 @@ textarea {
 .hero-photo-frame {
   position: relative;
   isolation: isolate;
-  width: clamp(390px, 31vw, 510px);
-  height: clamp(540px, calc(100vh - 170px), 660px);
+  width: clamp(360px, 27vw, 460px);
+  height: clamp(560px, calc(100vh - 150px), 690px);
   padding: 12px;
   border: 1px solid rgba(239, 228, 214, .52);
   border-radius: 240px 240px 34px 34px;
@@ -2171,5 +2175,66 @@ textarea {
   .hero-photo-frame img {
     border-radius: 170px 170px 16px 16px;
     object-position: center 50%;
+  }
+}
+
+
+/* Correção: evita que o nome invada a fotografia em telas grandes */
+@media (min-width: 981px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(430px, .92fr);
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .hero-name {
+    width: 100%;
+    max-width: 100% !important;
+  }
+
+  .hero-name-main {
+    /* O tamanho passa a respeitar melhor a largura disponível da coluna */
+    font-size: clamp(4rem, 4.65vw, 6.15rem);
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1500px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(500px, .95fr);
+    gap: clamp(56px, 5vw, 96px);
+  }
+
+  .hero-name-main {
+    font-size: clamp(5rem, 4.7vw, 6.8rem);
+  }
+
+  .hero-photo-frame {
+    width: clamp(450px, 24vw, 520px);
+    height: 650px;
+  }
+}
+
+@media (min-width: 2100px) {
+  .container {
+    width: min(1500px, calc(100% - 120px));
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(540px, .9fr);
+    gap: 110px;
+  }
+
+  .hero-name-main {
+    font-size: 6.7rem;
+  }
+
+  .hero-photo-frame {
+    width: 500px;
+    height: 650px;
   }
 }
